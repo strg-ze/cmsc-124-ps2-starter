@@ -28,19 +28,19 @@ The value is [FALSE,TRUE,TRUE,TRUE] because is.na(x) evaluates the missing statu
 The value is [1,2,1] because factor() converts the strings "low", "high", "low" into integer codes based on their level order.
 
 ## P08
-The value is list{scores=[3,5],label="A"} because a list holds items of different types. The type is list because it is a generic vector container.
+The value is list{scores=[3,5],label=["A"]} because a list holds items of different types. The type is list because it is a generic vector container.
 
 ## P09
-The value is data.frame[2x2][id=[1,2],passed=[TRUE,FALSE]] because a data frame is created with two columns, id and passed. The type is list because, under the hood, a data frame is actually a list of columns. The length is 2 because length() counts the number of top-level elements (the columns), not the rows. The dim is 2x2 because it carries row and column dimensions.
+The value is data.frame[2x2]{id=[1,2],passed=[TRUE,FALSE]} because a data frame is created with two columns, id and passed. The type is list because, under the hood, a data frame is actually a list of columns. The length is 2 because length() counts the number of top-level elements (the columns), not the rows. The dim is 2x2 because it carries row and column dimensions.
 
 ## P10
 The value is matrix[2x3](11,22,13,24,15,26) because R adds the shorter vector c(10,20) column-by-column to the matrix.
 
 ## P11
-The value is NA because mean() of a vector containing a missing value returns a missing value.
+The value is [NA] because mean() of a vector containing a missing value returns a missing value.
 
 ## P12
-The value is 9 because na.rm = TRUE removes the missing value, and the mean of 8 and 10 is 9.
+The value is [9] because na.rm = TRUE removes the missing value, and the mean of 8 and 10 is 9.
 
 ## P13
 The value is [1,2.5,3] because assigning the double 2.5 into the integer vector triggers mixed-mode assignment, replacing the second element. The type is double because the mixed-mode assignment forces R to widen the entire vector to double so the new value fits.
