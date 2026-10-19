@@ -34,6 +34,12 @@ A logical index selects positions where the corresponding logical value is TRUE,
 ## P07
 A factor stores integer codes and carries a set of level labels. `"low"` becomes code 1 and `"high"` becomes code 2. In c("low", "high", "low") it points to the integer code [1,2,1].
 
+Correction: 
+I predicted: value: [1,2,1]
+R predicted: value: factor[low,high,low];levels=[low,high]
+
+I misinterpreted the integer codes in factor as the value of the `c()`. Integer codes are just how the value is stored in memory, and not the actual value R will predict.
+
 ## P08
 A list can have elements with any type. 
 
