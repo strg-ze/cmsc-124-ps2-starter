@@ -24,8 +24,12 @@ The value is [4,9] because a negative index just excludes whatever is on that in
 ## P06
 The value is [FALSE,TRUE,TRUE,TRUE] because is.na(x) evaluates the missing status of each element and x > 10L checks the magnitude, combining into a logical mask. The type is logical because it returns the result of the comparison.
 
+Correction: I predicted [FALSE,TRUE,TRUE,TRUE] (logical, length 4) because I thought the expression evaluated the mask and replaced elements in the vector. R printed [NA,12] (integer, length 2).
+
 ## P07
 The value is [1,2,1] because factor() converts the strings "low", "high", "low" into integer codes based on their level order.
+
+Correction: I predicted [1,2,1] for the value. R printed factor[low,high,low];levels=[low,high]. My logic for the storage type was correct (integer), but I was unaware that the grader uses a specialized notation for factors inside quote().
 
 ## P08
 The value is list{scores=[3,5],label=["A"]} because a list holds items of different types. The type is list because it is a generic vector container.
@@ -39,14 +43,20 @@ The value is matrix[2x3](11,22,13,24,15,26) because R adds the shorter vector c(
 ## P11
 The value is [NA] because mean() of a vector containing a missing value returns a missing value.
 
+Correction: I predicted logical as the type because i forgot that mean() returns a double type in R.
+
 ## P12
 The value is [9] because na.rm = TRUE removes the missing value, and the mean of 8 and 10 is 9.
+
+Correction: I predicted integer as the type because i forgot that mean() returns a double type in R.
 
 ## P13
 The value is [1,2.5,3] because assigning the double 2.5 into the integer vector triggers mixed-mode assignment, replacing the second element. The type is double because the mixed-mode assignment forces R to widen the entire vector to double so the new value fits.
 
 ## P14
 The value is [14,0,15,8] because missing values are replaced with 0, non-missing values are doubled, and anything over 15 is set to 15.
+
+Correction: I predicted the type would be integer because all the values in the output (14, 0, 15, 8) look like whole numbers. R printed a type of double. I misread how the coercion ladder interacts with missing values: NA_real_ is inherently a double, which forces the entire scores vector to become double from the very first line.
 
 ## P15
 The value is array[2x2x2](1,2,3,4,5,6,7,8) because 1:8 generates the sequence and R fills the array column-major. The dim is 2x2x2 because the dim argument specifies[2x2x2].
