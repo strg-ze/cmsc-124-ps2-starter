@@ -2,7 +2,12 @@
 # CMSC 124 Problem Set 2 Starter
 
 This repository contains the R prediction corpus and the four functions for
-Problem Set 2. The assignment manual defines the work and the submission rules.
+Problem Set 2. The assignment manual defines the work and the submission rules.\
+
+## Pair
+
+- Ethan Sean Gapulan (`@Ethanerz`)
+- Adrienne Nicole Tipon (`@strg-ze`)
 
 ## Layout
 
